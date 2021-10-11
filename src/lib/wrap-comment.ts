@@ -44,7 +44,7 @@ export function reWrapSelected() {
  * Code here is pretty sketchy as was hacked together in about 15 minutes.
  * Could use a refactor later.
  */
-function reWrapComments(commentBlock: string, wrap: number = 80) {
+export function reWrapComments(commentBlock: string, wrap: number = 80) {
   const newCommentLines: string[] = [];
 
   enum CommentStyle {
