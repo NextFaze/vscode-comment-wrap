@@ -1,8 +1,11 @@
-import { window } from "vscode";
+import { window, workspace } from "vscode";
 
 const leadingCommentRe = /^(\/\/\/|\/\/|\s*\*\/?|\/\*)/;
 
 export function reWrapSelected() {
+  let configuration = workspace.getConfiguration();
+  const width = configuration.get<number>("commentWrap.printWidth", 80);
+
   const selected = getSelectedText();
 
   if (!selected || !selected.trim()) {
@@ -20,7 +23,7 @@ export function reWrapSelected() {
   }
 
   try {
-    replaceSelectedText(reWrapComments(selected, 80));
+    replaceSelectedText(reWrapComments(selected, width));
   } catch (ex) {
     console.log(ex);
     window.showInformationMessage("Failed to reformat comment");

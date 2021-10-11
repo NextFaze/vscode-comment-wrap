@@ -26,6 +26,17 @@ suite("Extension Test Suite", () => {
       );
     });
 
+    test("allows for a custom width", () => {
+      const original = `// this is my super long comment that should wrap onto the next line because it is too long`;
+      const formatted = reWrapComments(original, 40);
+      assert.strictEqual(
+        formatted,
+        `// this is my super long comment that
+// should wrap onto the next line
+// because it is too long`
+      );
+    });
+
     test("wraps dart-doc style comments", () => {
       const original = `/// this is my super long comment that should wrap onto the next line because it is too long`;
       const formatted = reWrapComments(original);

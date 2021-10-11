@@ -25,17 +25,27 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:comment-wrap.wrapComment"
+    "onCommand:commentWrap.wrapComment"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "comment-wrap.wrapComment",
+        "command": "commentWrap.wrapComment",
         "title": "Re-wrap comment",
         "category": "Comment Wrap"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Comment Wrap Length",
+      "properties": {
+        "commentWrap.printWidth": {
+          "type": "number",
+          "default": 80,
+          "description": "The length to wrap comments to."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

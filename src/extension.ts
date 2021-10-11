@@ -7,7 +7,7 @@ import { reWrapSelected } from "./lib/wrap-comment";
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand("comment-wrap.wrapComment", reWrapSelected)
+    vscode.commands.registerCommand("commentWrap.wrapComment", reWrapSelected)
   );
 }
 

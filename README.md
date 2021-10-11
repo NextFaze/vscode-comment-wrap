@@ -32,6 +32,16 @@ Supports:
 - ✅ Dart-doc comments ( `///` )
 - ❌ Anything else (Python, bash etc.) **yet**
 
+### Settings
+
+The default wrap length is `80` - it can be customized with user setting `commentWrap.printWidth`:
+
+```json
+{
+  "commentWrap.printWidth": 120
+}
+```
+
 ### **Disclaimer**
 
 This extension is in the very early stages of development (mostly a proof-of-concept at this stage, put together in about 15 minutes) so may not be fully functional.
