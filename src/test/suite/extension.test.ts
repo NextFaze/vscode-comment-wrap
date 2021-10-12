@@ -47,6 +47,17 @@ suite("Extension Test Suite", () => {
       );
     });
 
+    test("wraps multi-line dart-doc style comments", () => {
+      const original = `  /// this is my super long comment that will wrap onto
+  /// multiple lines because it is in fact that long`;
+      const formatted = reWrapComments(original);
+      assert.strictEqual(
+        formatted,
+        `/// this is my super long comment that will wrap onto multiple lines because it
+/// is in fact that long`
+      );
+    });
+
     test("wraps block style comments when the middle of the block is used", () => {
       const original = `* this is my super long comment that should wrap onto the next line because it is too long`;
       const formatted = reWrapComments(original);

@@ -68,6 +68,7 @@ export function reWrapComments(commentBlock: string, wrap: number = 80) {
 
   let commentText = commentBlock
     .split("\n")
+    .map((line) => line.trim())
     .map((line) => line.replace(leadingCommentRe, "").trim())
     .join(" ");
 
