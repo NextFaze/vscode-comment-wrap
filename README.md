@@ -1,3 +1,5 @@
+**IMPORTANT:** While you're welcome to submit PR's for this (or I may if I get some time) - I actually ended up finding a more feature-full extension for wrapping comments after publishing this. I suggest you check out [Rewrap](https://marketplace.visualstudio.com/items?itemName=stkb.rewrap) for better comment auto-wrapping support.
+
 <center>
 
 ## Comment Wrap
